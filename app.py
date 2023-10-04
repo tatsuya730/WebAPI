@@ -31,10 +31,15 @@ def get_title_and_link(title_id):
     return None  # タイトルかURLが存在しない場合は、Noneを返す
 
 
-if __name__ == "__main__":
+def main():
+    """メインの実行関数"""
     for title_id in get_top_titles_ids()[:30]:  # 上位30のタイトルIDについて繰り返す
         time.sleep(1)  # 1秒待機して連続アクセスを避ける
         result = get_title_and_link(title_id)  # タイトルとリンクを取得
 
         if result:  # タイトルとリンクが存在する場合のみ出力
             print(result)
+
+
+if __name__ == "__main__":
+    main()  # main関数を実行
